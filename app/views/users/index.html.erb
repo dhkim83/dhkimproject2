@@ -1,0 +1,16 @@
+<h1>Manage your Account</h1>
+<p>Welcome! Click 'Edit' button to manage your account</p>
+
+<% @users.each do |u| %>
+			
+    [<%= u.name %>]
+    [<%= u.email %>]
+    <%= link_to "Edit", edit_user_path(u) %>
+
+<% end %>
+
+
+
+
+
+	
