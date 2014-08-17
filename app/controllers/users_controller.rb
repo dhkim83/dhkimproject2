@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+# only: [:index, :show, :edit, :update, :destroy]
 
+# before_action :signed_in_user, only: [:edit, :update]
 
   def index
     @users =User.all
@@ -50,9 +51,41 @@ class UsersController < ApplicationController
           render 'edit' 
          end
       end
+end 
 
 
-  
+  # private
+
+  #   def user_params
+  #     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  #     pairing_ids [],
+  #     hospitals_attributes: [:id, :name, :location, :practice_field, :benefit]
+  #   end 
+  # end 
+
+
+ 
+  #   end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#     # Before filters
+
+#     def signed_in_user
+#       redirect_to signin_url, notice: "Please sign in." unless signed_in?
+#     end
+# end
 
   # DELETE /users/1
   # DELETE /users/1.json
@@ -77,10 +110,9 @@ class UsersController < ApplicationController
   #   end   
 
 
-end 
 
     # Never trust parameters from the scary internet, only allow the white list through.
 #     def user_params
 #       params.require(:user).permit(:option, :branch_of_medicine, :review, :doc_preference)
 #     end
-# end
+

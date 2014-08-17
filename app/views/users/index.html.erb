@@ -1,16 +1,39 @@
-<h1>Manage your Account</h1>
-<p>Welcome! Click 'Edit' button to manage your account</p>
+<h1>Welcome to Care Access!</h1>
 
-<% @users.each do |u| %>
-			
-    [<%= u.name %>]
-    [<%= u.email %>]
-    <%= link_to "Edit", edit_user_path(u) %>
+<p>This website is designated to provide blabla. In order to access, please log in or sign up for the site </P>
+
+
+
+<% if current_user %> 
+
+<p>If you are a new user, please click 'Sign up' button above</p>
+
+<p>In order to access to this site, please click 'Log In' button above</p> 
+
+
+
+
+<%= link_to 'Check Box', pairings_path %>
+
+
+<% else %>
+
 
 <% end %>
 
+<address>
+  <strong>Twitter, Inc.</strong><br>
+  795 Folsom Ave, Suite 600<br>
+  San Francisco, CA 94107<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+<address>
+  <strong>Full Name</strong><br>
+  <a href="mailto:#">first.last@example.com</a>
+</address>
 
 
+<%= link_to 'Go back to the hospital list', hospitals_path %>
 
 
-	
